@@ -35,20 +35,23 @@ public class MysqlGeneratorPlusDDD {
     /**
      * 表名
      */
-    private static String tableName="tools_project_account";
+    private static String tableName="tools_demo";
 
     /**
-     * 数据库连接串
+     * 数据库相关配置
      */
-    private static String URL="jdbc:mysql://10.0.14.31:3306/lumi_retail?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8";
+    private static String URL="jdbc:mysql://10.0.14.11:3306/demo?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8";
+    private static String DRIVE="com.mysql.jdbc.Driver";
+    private static String USERNAME="demoName";
+    private static String PASSWORD="demoPassword";
     /**
      * 父包
      */
-    private static String parentPackage="com.demo.retail";
+    private static String parentPackage="com.demo";
     /**
      * 父路径
      */
-    private static String parentPath="com/demo/retail/";
+    private static String parentPath="com/demo/";
 
     /**
      * RUN THIS
@@ -61,7 +64,7 @@ public class MysqlGeneratorPlusDDD {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/mybatis-generator-plus-DDD/src/main/java");
-        gc.setAuthor("yangyuting");
+        gc.setAuthor("styyt");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
@@ -69,9 +72,9 @@ public class MysqlGeneratorPlusDDD {
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl(URL);
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("yLIYa9G7nilruI5K");
+        dsc.setDriverName(DRIVE);
+        dsc.setUsername(USERNAME);
+        dsc.setPassword(PASSWORD);
         mpg.setDataSource(dsc);
 
         // 包配置
